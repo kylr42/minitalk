@@ -21,18 +21,15 @@ static void	ft_send_char(int pid, char c)
 		else
 			ft_issend(pid, SIGUSR2);
 		i = i >> 1;
-		usleep(100);
+		usleep(150);
 	}
 }
 
 static int	ft_isnumeric(char *str)
 {
 	while (*str)
-	{
-		if (!ft_isdigit(*str))
+		if (!ft_isdigit(*str++))
 			return (0);
-		str++;
-	}
 	return (1);
 }
 

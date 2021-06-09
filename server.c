@@ -4,16 +4,16 @@ t_data	g_data;
 
 void	signal_handler(int signal)
 {
-	if (signal == SIGUSR1)
+	if (signal == SIGUSR1) // 1
 	{
 		g_data.c += g_data.count;
 		g_data.count >>= 1;
 	}
-	else if (signal == SIGUSR2)
+	else if (signal == SIGUSR2) // 0
 		g_data.count >>= 1;
 	if (g_data.count < 1)
 	{
-		ft_putchar_fd((char)g_data.c, 1);
+		ft_putchar_fd((unsigned char)g_data.c, 1);
 		g_data.count = 128;
 		g_data.c = 0;
 	}
